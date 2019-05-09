@@ -21,3 +21,13 @@ action :create do
     recursive true
   end
 end
+
+action :remove do
+  user new_resource.username do
+    action :remove
+  end
+
+  directory new_resource.home do
+    action :delete
+  end
+end

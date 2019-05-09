@@ -10,3 +10,7 @@ describe user('YourUsernameHere') do
   its('home') { should eq '/home/YourUsernameHere' }
   its('shell') { should eq '/bin/bash' }
 end
+
+describe user('OldUser') do
+  it { should_not exist }
+end
