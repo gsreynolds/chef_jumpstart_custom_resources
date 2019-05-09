@@ -1,3 +1,3 @@
-mycorp_user 'YourUserNameHere' do
-  password 'test'
+mycorp_user 'YourUsernameHere' do
+  home '/home/YourUsernameHere'
 end
