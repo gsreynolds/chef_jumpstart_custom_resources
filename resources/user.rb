@@ -3,13 +3,15 @@
 resource_name :mycorp_user
 
 property :username, String, name_property: true
-property :home, String
+property :home, String, default: lazy { "/home/#{username}" }
+property :shell, String, default: '/bin/bash', equal_to: ['/bin/bash', '/bin/sh']
 
 action :create do
   # Create a user to MyCorp standards
 
   user new_resource.username do
     home new_resource.home
+    shell new_resource.shell
     manage_home false
   end
 
